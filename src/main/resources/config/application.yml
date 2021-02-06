@@ -59,10 +59,10 @@ management:
 
 spring:
   application:
-    name: puzzleLibrary
+    name: puzzlelibrary
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
-    # Otherwise, it will be filled in by gradle when building the JAR file
+    # Otherwise, it will be filled in by maven when building the JAR file
     # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
     active: #spring.profiles.active#
   jmx:
@@ -97,13 +97,13 @@ spring:
     allow-bean-definition-overriding: true
   task:
     execution:
-      thread-name-prefix: puzzle-library-task-
+      thread-name-prefix: puzzlelibrary-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: puzzle-library-scheduling-
+      thread-name-prefix: puzzlelibrary-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -131,7 +131,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'puzzleLibraryApp'
+    name: 'puzzlelibraryApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #     allowed-origins: "*"
@@ -141,11 +141,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: puzzleLibrary@localhost
+    from: puzzlelibrary@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: puzzleLibrary API
-    description: puzzleLibrary API documentation
+    title: puzzlelibrary API
+    description: puzzlelibrary API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

@@ -12,14 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.domain.User;
 import pl.maryniowski.apps.puzzlelibrary.repository.UserRepository;
 
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
     private static final String USER_ONE_LOGIN = "test-user-one";

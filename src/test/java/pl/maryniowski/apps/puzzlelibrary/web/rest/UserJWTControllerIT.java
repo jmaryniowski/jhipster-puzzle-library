@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.domain.User;
 import pl.maryniowski.apps.puzzlelibrary.repository.UserRepository;
 import pl.maryniowski.apps.puzzlelibrary.web.rest.vm.LoginVM;
@@ -27,7 +27,7 @@ import pl.maryniowski.apps.puzzlelibrary.web.rest.vm.LoginVM;
  * Integration tests for the {@link UserJWTController} REST controller.
  */
 @AutoConfigureMockMvc
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 public class UserJWTControllerIT {
     @Autowired
     private UserRepository userRepository;

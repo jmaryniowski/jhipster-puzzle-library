@@ -1,0 +1,10 @@
+{
+  "puzzlelibraryApp": {
+    "PuzzleType": {
+      "null": "",
+      "PUZZLE": "PUZZLE",
+      "GAME": "GAME",
+      "OTHER": "OTHER"
+    }
+  }
+}

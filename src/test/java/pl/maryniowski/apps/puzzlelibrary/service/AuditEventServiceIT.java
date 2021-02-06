@@ -10,14 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.domain.PersistentAuditEvent;
 import pl.maryniowski.apps.puzzlelibrary.repository.PersistenceAuditEventRepository;
 
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

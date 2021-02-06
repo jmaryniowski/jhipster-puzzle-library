@@ -18,7 +18,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.domain.PersistentAuditEvent;
 import pl.maryniowski.apps.puzzlelibrary.repository.PersistenceAuditEventRepository;
 import pl.maryniowski.apps.puzzlelibrary.security.AuthoritiesConstants;
@@ -28,7 +28,7 @@ import pl.maryniowski.apps.puzzlelibrary.security.AuthoritiesConstants;
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 @Transactional
 public class AuditResourceIT {
     private static final String SAMPLE_PRINCIPAL = "SAMPLE_PRINCIPAL";

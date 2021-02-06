@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { PuzzleLibrarySharedModule } from 'app/shared/shared.module';
-import { PuzzleLibraryCoreModule } from 'app/core/core.module';
-import { PuzzleLibraryAppRoutingModule } from './app-routing.module';
-import { PuzzleLibraryHomeModule } from './home/home.module';
-import { PuzzleLibraryEntityModule } from './entities/entity.module';
+import { PuzzlelibrarySharedModule } from 'app/shared/shared.module';
+import { PuzzlelibraryCoreModule } from 'app/core/core.module';
+import { PuzzlelibraryAppRoutingModule } from './app-routing.module';
+import { PuzzlelibraryHomeModule } from './home/home.module';
+import { PuzzlelibraryEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    PuzzleLibrarySharedModule,
-    PuzzleLibraryCoreModule,
-    PuzzleLibraryHomeModule,
+    PuzzlelibrarySharedModule,
+    PuzzlelibraryCoreModule,
+    PuzzlelibraryHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    PuzzleLibraryEntityModule,
-    PuzzleLibraryAppRoutingModule,
+    PuzzlelibraryEntityModule,
+    PuzzlelibraryAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
-export class PuzzleLibraryAppModule {}
+export class PuzzlelibraryAppModule {}

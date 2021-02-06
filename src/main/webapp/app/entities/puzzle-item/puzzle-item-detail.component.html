@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="puzzleItem">
+            <h2><span jhiTranslate="puzzlelibraryApp.puzzleItem.detail.title">Puzzle Item</span> {{ puzzleItem.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleItem.name">Name</span></dt>
+                <dd>
+                    <span>{{ puzzleItem.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleItem.description">Description</span></dt>
+                <dd>
+                    <span>{{ puzzleItem.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleItem.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'puzzlelibraryApp.PuzzleType.' + puzzleItem.type }}">{{ puzzleItem.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleItem.picture">Picture</span></dt>
+                <dd>
+                    <div *ngIf="puzzleItem.picture">
+                        <a (click)="openFile(puzzleItem.pictureContentType, puzzleItem.picture)">
+                            <img [src]="'data:' + puzzleItem.pictureContentType + ';base64,' + puzzleItem.picture" style="max-width: 100%;" alt="puzzleItem image"/>
+                        </a>
+                        {{ puzzleItem.pictureContentType }}, {{ byteSize(puzzleItem.picture) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleItem.puzzlePerson">Puzzle Person</span></dt>
+                <dd>
+                    <div *ngIf="puzzleItem.puzzlePerson">
+                        <a [routerLink]="['/puzzle-person', puzzleItem.puzzlePerson?.id, 'view']">{{ puzzleItem.puzzlePerson?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/puzzle-item', puzzleItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
