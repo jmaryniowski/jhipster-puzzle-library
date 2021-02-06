@@ -1,0 +1,54 @@
+
+application {
+  config {
+    baseName puzzlelibrary,
+    applicationType monolith,
+    packageName pl.maryniowski.apps.puzzlelibrary,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angular
+  }
+  entities *
+}
+
+enum PuzzleType {
+  PUZZLE,
+  GAME,
+  OTHER
+}
+
+entity PuzzlePerson {
+	id Integer
+}
+
+entity PuzzleItem {
+	id Integer,
+	name String,
+    description String,
+    type Country,
+    picture ImageBlob
+}
+
+entity PuzzleRental {
+	id Integer,
+    startDate LocalDate,
+    endDate LocalDate,
+    isActive Boolean
+}
+
+relationship OneToMany {
+    PuzzlePerson to PuzzleRental
+}
+
+relationship OneToMany {
+    PuzzlePerson to PuzzleItem
+}
+
+relationship OneToOne {
+	PuzzleRental to PuzzleItem
+}
+
+relationship OneToOne {
+    PuzzlePerson{user} to User
+}
+    
