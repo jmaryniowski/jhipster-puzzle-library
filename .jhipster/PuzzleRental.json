@@ -1,0 +1,45 @@
+{
+  "name": "PuzzleRental",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "puzzleItem",
+      "otherEntityRelationshipName": "puzzleRental",
+      "relationshipName": "puzzleItem",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "puzzlePerson",
+      "otherEntityRelationshipName": "puzzleRental",
+      "relationshipName": "puzzlePerson",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210206231618",
+  "entityTableName": "puzzle_rental",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["puzzlelibrary"]
+}

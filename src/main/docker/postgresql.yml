@@ -3,9 +3,9 @@ services:
   puzzlelibrary-postgresql:
     image: postgres:12.3
     # volumes:
-    #     - ~/volumes/jhipster/puzzleLibrary/postgresql/:/var/lib/postgresql/data/
+    #     - ~/volumes/jhipster/puzzlelibrary/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=puzzleLibrary
+      - POSTGRES_USER=puzzlelibrary
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:

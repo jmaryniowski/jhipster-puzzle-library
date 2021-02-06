@@ -1,0 +1,27 @@
+{
+  "puzzlelibraryApp": {
+    "puzzleItem": {
+      "home": {
+        "title": "Puzzle Items",
+        "createLabel": "Create a new Puzzle Item",
+        "createOrEditLabel": "Create or edit a Puzzle Item",
+        "notFound": "No Puzzle Items found"
+      },
+      "created": "A new Puzzle Item is created with identifier {{ param }}",
+      "updated": "A Puzzle Item is updated with identifier {{ param }}",
+      "deleted": "A Puzzle Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Puzzle Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Puzzle Item"
+      },
+      "name": "Name",
+      "description": "Description",
+      "type": "Type",
+      "picture": "Picture",
+      "puzzleRental": "Puzzle Rental",
+      "puzzlePerson": "Puzzle Person"
+    }
+  }
+}

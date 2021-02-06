@@ -20,7 +20,7 @@ import org.springframework.data.auditing.DateTimeProvider;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.config.Constants;
 import pl.maryniowski.apps.puzzlelibrary.domain.User;
 import pl.maryniowski.apps.puzzlelibrary.repository.UserRepository;
@@ -29,7 +29,7 @@ import pl.maryniowski.apps.puzzlelibrary.service.dto.UserDTO;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 @Transactional
 public class UserServiceIT {
     private static final String DEFAULT_LOGIN = "johndoe";

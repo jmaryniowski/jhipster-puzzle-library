@@ -1,0 +1,27 @@
+{
+  "puzzlelibraryApp": {
+    "puzzleItem": {
+      "home": {
+        "title": "PuzzleItems",
+        "createLabel": "Créer un nouveau Puzzle Item",
+        "createOrEditLabel": "Créer ou éditer un Puzzle Item",
+        "notFound": "Aucun Puzzle Item trouvé"
+      },
+      "created": "Un nouveau Puzzle Item a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Puzzle Item avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Puzzle Item avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Puzzle Item {{ id }} ?"
+      },
+      "detail": {
+        "title": "Puzzle Item"
+      },
+      "name": "Name",
+      "description": "Description",
+      "type": "Type",
+      "picture": "Picture",
+      "puzzleRental": "Puzzle Rental",
+      "puzzlePerson": "Puzzle Person"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="puzzlelibraryApp.puzzleItem.home.title">Puzzle Items</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-puzzle-item" [routerLink]="['/puzzle-item/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="puzzlelibraryApp.puzzleItem.home.createLabel">
+            Create a new Puzzle Item
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="puzzleItems?.length === 0">
+        <span jhiTranslate="puzzlelibraryApp.puzzleItem.home.notFound">No puzzleItems found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="puzzleItems && puzzleItems.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="puzzlelibraryApp.puzzleItem.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="puzzlelibraryApp.puzzleItem.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="puzzlelibraryApp.puzzleItem.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="puzzlelibraryApp.puzzleItem.picture">Picture</span></th>
+                    <th scope="col" ><span jhiTranslate="puzzlelibraryApp.puzzleItem.puzzlePerson">Puzzle Person</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let puzzleItem of puzzleItems ;trackBy: trackId">
+                    <td><a [routerLink]="['/puzzle-item', puzzleItem.id, 'view']">{{ puzzleItem.id }}</a></td>
+                    <td>{{ puzzleItem.name }}</td>
+                    <td>{{ puzzleItem.description }}</td>
+                    <td jhiTranslate="{{ 'puzzlelibraryApp.PuzzleType.' + puzzleItem.type }}">{{ puzzleItem.type }}</td>
+                    <td>
+                        <a *ngIf="puzzleItem.picture" (click)="openFile(puzzleItem.pictureContentType, puzzleItem.picture)">
+                            <img [src]="'data:' + puzzleItem.pictureContentType + ';base64,' + puzzleItem.picture" style="max-height: 30px;" alt="puzzleItem image"/>
+                        </a>
+                        <span *ngIf="puzzleItem.picture">{{ puzzleItem.pictureContentType }}, {{ byteSize(puzzleItem.picture) }}</span>
+                    </td>
+                    <td>
+                        <div *ngIf="puzzleItem.puzzlePerson">
+                            <a [routerLink]="['/puzzle-person', puzzleItem.puzzlePerson?.id, 'view']" >{{ puzzleItem.puzzlePerson?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/puzzle-item', puzzleItem.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/puzzle-item', puzzleItem.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(puzzleItem)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

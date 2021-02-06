@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-puzzle-rental-heading" jhiTranslate="puzzlelibraryApp.puzzleRental.home.createOrEditLabel">Create or edit a Puzzle Rental</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="puzzlelibraryApp.puzzleRental.startDate" for="field_startDate">Start Date</label>
+                    <div class="input-group">
+                        <input id="field_startDate" type="text" class="form-control" name="startDate" ngbDatepicker #startDateDp="ngbDatepicker" formControlName="startDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="puzzlelibraryApp.puzzleRental.endDate" for="field_endDate">End Date</label>
+                    <div class="input-group">
+                        <input id="field_endDate" type="text" class="form-control" name="endDate" ngbDatepicker #endDateDp="ngbDatepicker" formControlName="endDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="endDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="puzzlelibraryApp.puzzleRental.isActive" for="field_isActive">Is Active</label>
+                    <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="puzzlelibraryApp.puzzleRental.puzzleItem" for="field_puzzleItem">Puzzle Item</label>
+                    <select class="form-control" id="field_puzzleItem" name="puzzleItem" formControlName="puzzleItem">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="puzzleItemOption.id === editForm.get('puzzleItem')!.value?.id ? editForm.get('puzzleItem')!.value : puzzleItemOption" *ngFor="let puzzleItemOption of puzzleitems; trackBy: trackById">{{ puzzleItemOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="puzzlelibraryApp.puzzleRental.puzzlePerson" for="field_puzzlePerson">Puzzle Person</label>
+                    <select class="form-control" id="field_puzzlePerson" name="puzzlePerson" formControlName="puzzlePerson">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="puzzlePersonOption.id === editForm.get('puzzlePerson')!.value?.id ? editForm.get('puzzlePerson')!.value : puzzlePersonOption" *ngFor="let puzzlePersonOption of puzzlepeople; trackBy: trackById">{{ puzzlePersonOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

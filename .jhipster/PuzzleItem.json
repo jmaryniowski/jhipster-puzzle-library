@@ -1,0 +1,50 @@
+{
+  "name": "PuzzleItem",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "PuzzleType",
+      "fieldValues": "PUZZLE,GAME,OTHER"
+    },
+    {
+      "fieldName": "picture",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "puzzleRental",
+      "otherEntityRelationshipName": "puzzleItem",
+      "relationshipName": "puzzleRental",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "puzzlePerson",
+      "otherEntityRelationshipName": "puzzleItem",
+      "relationshipName": "puzzlePerson",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210206231518",
+  "entityTableName": "puzzle_item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["puzzlelibrary"]
+}

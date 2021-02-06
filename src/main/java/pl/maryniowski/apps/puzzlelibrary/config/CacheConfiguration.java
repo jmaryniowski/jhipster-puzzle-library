@@ -47,6 +47,11 @@ public class CacheConfiguration {
             createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.User.class.getName());
             createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.Authority.class.getName());
             createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.User.class.getName() + ".authorities");
+            createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.PuzzlePerson.class.getName());
+            createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.PuzzlePerson.class.getName() + ".puzzleRentals");
+            createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.PuzzlePerson.class.getName() + ".puzzleItems");
+            createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.PuzzleItem.class.getName());
+            createCache(cm, pl.maryniowski.apps.puzzlelibrary.domain.PuzzleRental.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,7 +1,7 @@
 {
-  "name": "puzzle-library",
+  "name": "puzzlelibrary",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for puzzleLibrary",
+  "description": "Description for puzzlelibrary",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [
@@ -100,8 +100,8 @@
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix",
     "ngc": "ngc -p tsconfig.app.json",
-    "cleanup": "rimraf build/resources/main/static/",
-    "clean-www": "rimraf build/resources/main/static/app/{src,build/}",
+    "cleanup": "rimraf target/classes/static/",
+    "clean-www": "rimraf target/classes/static/app/{src,target/}",
     "start": "npm run webpack:dev",
     "start-tls": "npm run webpack:dev -- --env.tls",
     "serve": "npm run start",
@@ -119,7 +119,7 @@
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js"
   },
   "jestSonar": {
-    "reportPath": "build/test-results/jest",
+    "reportPath": "target/test-results/jest",
     "reportFile": "TESTS-results-sonar.xml"
   }
 }

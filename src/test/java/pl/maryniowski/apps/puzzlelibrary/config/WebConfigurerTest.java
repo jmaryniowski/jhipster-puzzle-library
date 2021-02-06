@@ -74,7 +74,7 @@ public class WebConfigurerTest {
         assertThat(container.getMimeMappings().get("html")).isEqualTo("text/html;charset=utf-8");
         assertThat(container.getMimeMappings().get("json")).isEqualTo("text/html;charset=utf-8");
         if (container.getDocumentRoot() != null) {
-            assertThat(container.getDocumentRoot()).isEqualTo(new File("build/resources/main/static/"));
+            assertThat(container.getDocumentRoot()).isEqualTo(new File("target/classes/static/"));
         }
     }
 

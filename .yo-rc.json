@@ -2,10 +2,10 @@
   "generator-jhipster": {
     "applicationType": "monolith",
     "gitCompany": "",
-    "baseName": "puzzleLibrary",
+    "baseName": "puzzlelibrary",
     "packageName": "pl.maryniowski.apps.puzzlelibrary",
     "packageFolder": "pl/maryniowski/apps/puzzlelibrary",
-    "serverPort": 8080,
+    "serverPort": "8080",
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
@@ -18,13 +18,13 @@
     "searchEngine": false,
     "enableSwaggerCodegen": false,
     "messageBroker": false,
-    "buildTool": "gradle",
+    "buildTool": "maven",
     "useSass": true,
     "clientPackageManager": "npm",
     "testFrameworks": [],
     "enableTranslation": true,
-    "nativeLanguage": "pl",
-    "languages": ["en", "pl"],
+    "nativeLanguage": "en",
+    "languages": ["en", "fr"],
     "clientFramework": "angularX",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "6.10.5",
@@ -36,9 +36,14 @@
     "dtoSuffix": "DTO",
     "otherModules": [],
     "blueprints": [],
-    "prettierJava": true
+    "prettierJava": true,
+    "skipUserManagement": false,
+    "skipClient": false,
+    "skipServer": false,
+    "clientThemeVariant": ""
   },
   "git-provider": "GitHub",
   "git-company": "jmaryniowski",
-  "repository-name": "jhipster-puzzle-library"
+  "repository-name": "jhipster-puzzle-library",
+  "entities": ["PuzzlePerson", "PuzzleItem", "PuzzleRental"]
 }

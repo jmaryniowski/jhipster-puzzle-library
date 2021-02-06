@@ -19,7 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.config.Constants;
 import pl.maryniowski.apps.puzzlelibrary.domain.User;
 import pl.maryniowski.apps.puzzlelibrary.repository.AuthorityRepository;
@@ -36,7 +36,7 @@ import pl.maryniowski.apps.puzzlelibrary.web.rest.vm.ManagedUserVM;
  */
 @AutoConfigureMockMvc
 @WithMockUser(value = TEST_USER_LOGIN)
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 public class AccountResourceIT {
     static final String TEST_USER_LOGIN = "test";
 

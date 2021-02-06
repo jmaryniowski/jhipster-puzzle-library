@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="puzzleRental">
+            <h2><span jhiTranslate="puzzlelibraryApp.puzzleRental.detail.title">Puzzle Rental</span> {{ puzzleRental.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleRental.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ puzzleRental.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleRental.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ puzzleRental.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleRental.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ puzzleRental.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleRental.puzzleItem">Puzzle Item</span></dt>
+                <dd>
+                    <div *ngIf="puzzleRental.puzzleItem">
+                        <a [routerLink]="['/puzzle-item', puzzleRental.puzzleItem?.id, 'view']">{{ puzzleRental.puzzleItem?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="puzzlelibraryApp.puzzleRental.puzzlePerson">Puzzle Person</span></dt>
+                <dd>
+                    <div *ngIf="puzzleRental.puzzlePerson">
+                        <a [routerLink]="['/puzzle-person', puzzleRental.puzzlePerson?.id, 'view']">{{ puzzleRental.puzzlePerson?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/puzzle-rental', puzzleRental.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

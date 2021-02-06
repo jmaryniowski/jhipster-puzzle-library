@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PuzzleLibrarySharedModule } from 'app/shared/shared.module';
+import { PuzzlelibrarySharedModule } from 'app/shared/shared.module';
 
 import { ConfigurationComponent } from './configuration.component';
 
 import { configurationRoute } from './configuration.route';
 
 @NgModule({
-  imports: [PuzzleLibrarySharedModule, RouterModule.forChild([configurationRoute])],
+  imports: [PuzzlelibrarySharedModule, RouterModule.forChild([configurationRoute])],
   declarations: [ConfigurationComponent],
 })
 export class ConfigurationModule {}

@@ -1,0 +1,26 @@
+{
+  "puzzlelibraryApp": {
+    "puzzleRental": {
+      "home": {
+        "title": "Puzzle Rentals",
+        "createLabel": "Create a new Puzzle Rental",
+        "createOrEditLabel": "Create or edit a Puzzle Rental",
+        "notFound": "No Puzzle Rentals found"
+      },
+      "created": "A new Puzzle Rental is created with identifier {{ param }}",
+      "updated": "A Puzzle Rental is updated with identifier {{ param }}",
+      "deleted": "A Puzzle Rental is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Puzzle Rental {{ id }}?"
+      },
+      "detail": {
+        "title": "Puzzle Rental"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "isActive": "Is Active",
+      "puzzleItem": "Puzzle Item",
+      "puzzlePerson": "Puzzle Person"
+    }
+  }
+}

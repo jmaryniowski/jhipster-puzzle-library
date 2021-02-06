@@ -18,7 +18,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.transaction.annotation.Transactional;
-import pl.maryniowski.apps.puzzlelibrary.PuzzleLibraryApp;
+import pl.maryniowski.apps.puzzlelibrary.PuzzlelibraryApp;
 import pl.maryniowski.apps.puzzlelibrary.config.Constants;
 import pl.maryniowski.apps.puzzlelibrary.config.audit.AuditEventConverter;
 import pl.maryniowski.apps.puzzlelibrary.domain.PersistentAuditEvent;
@@ -26,7 +26,7 @@ import pl.maryniowski.apps.puzzlelibrary.domain.PersistentAuditEvent;
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = PuzzleLibraryApp.class)
+@SpringBootTest(classes = PuzzlelibraryApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
     @Autowired
